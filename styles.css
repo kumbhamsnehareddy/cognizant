@@ -1,0 +1,802 @@
+/* Global Styles */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header & Navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Welcome Banner */
+#welcomeBanner {
+    background: #fff;
+    color: #222;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#welcomeBanner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    background-color: #fff;
+    color: #e53935 !important;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(229, 57, 53, 0.08);
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+/* Event Cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Image Gallery */
+.event-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.event-img:hover {
+    transform: scale(1.05);
+}
+
+.event-img.enlarged {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Video Section */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Geolocation Section */
+#locationResult {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Feedback Section */
+.feedback-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+footer h5 {
+    color: var(--light-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+footer a {
+    color: var(--light-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #welcomeBanner {
+        padding: 1.5rem;
+    }
+
+    #welcomeBanner h2 {
+        font-size: 2rem;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+
+    .event-img {
+        height: 180px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #welcomeBanner {
+        padding: 1rem;
+    }
+
+    #welcomeBanner h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-img-top {
+        height: 160px;
+    }
+
+    .event-img {
+        height: 160px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Utility Classes */
+.shadow-sm {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1) !important;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary-color), #00C6FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Loading Spinner */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Modal Customization */
+.modal-content {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+/* Alert Customization */
+.alert {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Table Customization */
+.table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
+.table td, .table th {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* Form Validation Styles */
+.was-validated .form-control:valid {
+    border-color: var(--success-color);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+}
+
+.was-validated .form-control:invalid {
+    border-color: var(--danger-color);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}
+
+/* ===========================
+   Header styles
+   =========================== */
+#welcomeBanner {
+  background: linear-gradient(90deg, #007BFF, #00C6FF);
+  color: white;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  font-size: 1.2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.nav-buttons button {
+  background-color: #28a745;    /* Green color */
+  color: white;
+  border: none;
+  padding: 15px 30px;           /* Bigger padding for larger buttons */
+  font-size: 1.2rem;            /* Bigger font size */
+  font-weight: bold;
+  border-radius: 8px;           /* Slightly more rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background-color: #1e7e34;    /* Darker green on hover */
+}
+/* ===========================
+   Link and List Styling
+   =========================== */
+
+/* Links styling */
+a:link {
+  color: #007BFF; /* blue */
+  text-decoration: none;
+}
+
+a:visited {
+  color: #551A8B; /* purple */
+}
+
+a:hover {
+  color: #0056b3; /* darker blue */
+  text-decoration: underline;
+}
+
+a:active {
+  color: #003d80; /* even darker */
+}
+
+/* Navigation list - remove bullets and adjust spacing */
+nav ul {
+  list-style-type: none;  /* remove bullets */
+  padding: 0;
+  margin: 0;
+  display: flex;  /* horizontal layout */
+  gap: 20px;     /* space between items */
+}
+
+/* Navigation list items */
+nav ul li {
+  margin: 0;
+  padding: 5px 10px;
+}
+
+/* Optionally, you can add hover effect on nav links */
+nav ul li a:hover {
+  color: #00c6ff;
+  font-weight: bold;
+}
+
+/* General unordered lists - different style */
+ul.custom-list {
+  list-style-type: square; /* square bullets */
+  list-style-position: inside; /* bullet inside content box */
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+ul.custom-list li {
+  margin-bottom: 8px;
+  padding-left: 5px;
+}
+
+
+
+/* Highlight special offers */
+.special-offer {
+  color: #FFD700;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Text highlight style */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* ===========================
+   Navigation styles
+   =========================== */
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: blue;
+}
+
+/* ===========================
+   Event image styles
+   =========================== */
+.event-img {
+  width: 350px;
+  height: auto;
+  border: 3px solid #333;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 5px auto;
+}
+
+/* ===========================
+   Table styling
+   =========================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Caption styling */
+figcaption {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.3em;
+}
+
+/* ===========================
+   Form styles
+   =========================== */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Confirmation message */
+#confirmationMessage {
+  display: block;
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+}
+/* ===========================
+   Selectors Playground
+   =========================== */
+
+/* Reset margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style all <h2> elements */
+h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Style the banner with ID #mainHeader */
+#mainHeader {
+  background-color: #004080;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  font-size: 2em;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Style event containers with class .eventCard */
+.eventCard {
+  background-color: #e6f0ff;
+  border: 1px solid #99bbff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Group selector: style <h3> and <p> together */
+h3, p {
+  font-family: 'Arial', sans-serif;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* ===========================
+   Color & Background Styling
+   =========================== */
+
+/* Body background with fallback color and background image */
+body {
+  background-color: #f0f4f8; /* fallback color */
+  background-image: url('background.jpg'); /* replace with your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: rgba(0, 0, 0, 0.8); /* text color with some transparency */
+}
+
+
+
+/* Example for text using HEX and RGBA */
+p.description {
+  color: #333333; /* dark text */
+  background-color: rgba(255, 255, 255, 0.75); /* semi-transparent white bg */
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 1.6;
+}
+/* ===========================
+   Typography: Fonts and Text
+   =========================== */
+
+/* Apply Google Font globally */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #222;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 700; /* bold */
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+
+/* Smaller headings can have different size */
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+/* Paragraphs with description class */
+p.description {
+  font-style: italic;
+  font-size: 1rem;
+  text-align: justify;
+  letter-spacing: 0.5px;
+  line-height: 1.8;
+}
+
+/* Special font for call-to-action buttons */
+.cta-button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ===========================
+   Multi-Column News Layout
+   =========================== */
+
+.news-article {
+  column-count: 1;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  font-family: 'Georgia', serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media screen and (max-width: 768px) {
+  /* Navigation becomes vertical */
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Adjust font sizes */
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  /* Adjust form width */
+  form {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  /* Adjust event image size */
+  .event-img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Stack news columns */
+  .news-article {
+    column-count: 1;
+  }
+
+  /* Adjust welcome banner */
+  #welcomeBanner {
+    padding: 15px;
+    font-size: 1em;
+  }
+
+  /* Adjust event cards */
+  .eventCard {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Additional breakpoint for very small screens */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .nav-buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+}
+
+/* Make event registration header more visible */
+.card-header.bg-primary.text-white {
+    background: #0056b3 !important;
+    color: #fff !important;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+
+
+
+
